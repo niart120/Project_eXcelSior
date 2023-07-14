@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XsReader", "XsReader\XsReader.csproj", "{1FA3BE77-31FB-4DF3-8592-014194A576D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlinkReader", "BlinkReader\BlinkReader.csproj", "{78046C7F-063B-41F2-9BDA-A2E0161E650C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FA3BE77-31FB-4DF3-8592-014194A576D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA3BE77-31FB-4DF3-8592-014194A576D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA3BE77-31FB-4DF3-8592-014194A576D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA3BE77-31FB-4DF3-8592-014194A576D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78046C7F-063B-41F2-9BDA-A2E0161E650C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78046C7F-063B-41F2-9BDA-A2E0161E650C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78046C7F-063B-41F2-9BDA-A2E0161E650C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78046C7F-063B-41F2-9BDA-A2E0161E650C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3ED96BA-88B3-49E5-B799-86CA84515E7F}
+	EndGlobalSection
+EndGlobal
