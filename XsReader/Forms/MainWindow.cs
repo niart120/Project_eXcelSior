@@ -25,9 +25,6 @@ namespace Project_eXcelSior.Forms
 
             //u‚«‰æ‘œ‚ÌŠi”[ƒfƒBƒŒƒNƒgƒŠ“Ç‚İ‚İ
             loadImageNames();
-            identifyImageName.SelectedIndex = 0;
-            reidentifyImageName.SelectedIndex = 0;
-            capturetestImageName.SelectedIndex = 0;
 
             //İ’è“Ç‚İ‚İ
             LoadFromSetting();
