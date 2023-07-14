@@ -2,8 +2,6 @@
 using PokemonBDSPRNGLibrary.RestoreSeed;
 using PokemonPRNG.XorShift128;
 using Project_eXcelSior.Misc;
-
-using MathNet;
 using MathNet.Numerics.LinearRegression;
 
 namespace Project_eXcelSior.Forms
