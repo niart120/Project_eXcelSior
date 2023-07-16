@@ -98,7 +98,7 @@ namespace Project_eXcelSior.Forms
                     var x1 = Convert.ToUInt64(seed1.Text, 16);
                     var state = ((uint)(x0 >> 32), (uint)(x0 & 0xFFFFFFFF), (uint)(x1 >> 32), (uint)(x1 & 0xFFFFFFFF));
                     for (var i = 0; i < searchMin.Value; i++) state.Advance();
-                    var searchRange = (uint)(searchMax.Value - searchMin.Value);
+                    var searchRange = (uint)(Math.Abs(searchMax.Value - searchMin.Value));
 
                     if (isInNoisy.Checked)
                     {
@@ -177,7 +177,9 @@ namespace Project_eXcelSior.Forms
 
         private void reidentifyImageName_Click(object sender, EventArgs e)
         {
-            loadImageNames();
+            var filenames = DirectoryUtils.GetFileNames(GetEyeimageDirPath(), new[] { ".png", ".jpeg", ".jpg", ".gif", ".bmp" });
+            reidentifyImageName.Items.Clear();
+            reidentifyImageName.Items.AddRange(filenames);
         }
     }
 }
