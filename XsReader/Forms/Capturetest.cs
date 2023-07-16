@@ -52,7 +52,9 @@ namespace Project_eXcelSior.Forms
 
         private void capturetestImageName_Click(object sender, EventArgs e)
         {
-            loadImageNames();
+            var filenames = DirectoryUtils.GetFileNames(GetEyeimageDirPath(), new[] { ".png", ".jpeg", ".jpg", ".gif", ".bmp" });
+            capturetestImageName.Items.Clear();
+            capturetestImageName.Items.AddRange(filenames);
         }
     }
 }
