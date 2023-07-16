@@ -97,11 +97,6 @@ namespace Project_eXcelSior.Forms
 
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            loadImageNames();
-        }
-
         private void detectorThreshold_ValueChanged(object sender, EventArgs e)
         {
             detector.thresh = (double)detectorThreshold.Value;
