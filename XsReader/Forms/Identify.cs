@@ -77,14 +77,14 @@ namespace Project_eXcelSior.Forms
                     inverter.AddBlink(prevBlinkType);
                     //エントロピーの値を更新
                     this.identifyEntropy.Value = inverter.Entropy;
-                    //復元を試みる
-                    if (inverter.TryRestoreState(out restored)) break;
-
-                    //失敗した場合は今回の瞬き間隔分だけ瞬き無し(None)をいれる
                     //四捨五入して瞬き間隔を計算
                     var interval = (int)(intvl + 0.5);
                     //検証リストへの追加
                     intervals.Add(interval);
+                    //復元を試みる
+                    if (inverter.TryRestoreState(out restored)) break;
+
+                    //失敗した場合は今回の瞬き間隔分だけ瞬き無し(None)をいれる
                     //interval-1だけNoneを追加
                     for( var i = 0; i < interval - 1; i++)
                     {
