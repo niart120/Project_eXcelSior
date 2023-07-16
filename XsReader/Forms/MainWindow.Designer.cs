@@ -32,7 +32,6 @@
             menuStrip1 = new MenuStrip();
             toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
             seed1 = new TextBox();
             label2 = new Label();
@@ -116,10 +115,10 @@
             // 
             menuStrip1.BackColor = SystemColors.MenuBar;
             menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2 });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(974, 40);
+            menuStrip1.Size = new Size(974, 42);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -127,23 +126,16 @@
             // 
             toolStripMenuItem1.ForeColor = SystemColors.ActiveCaptionText;
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(214, 36);
+            toolStripMenuItem1.Size = new Size(214, 38);
             toolStripMenuItem1.Text = "キャプチャ枠非表示";
             toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(130, 36);
+            toolStripMenuItem2.Size = new Size(130, 38);
             toolStripMenuItem2.Text = "画像撮影";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
-            // 
-            // toolStripMenuItem3
-            // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(100, 36);
-            toolStripMenuItem3.Text = "リロード";
-            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // groupBox1
             // 
@@ -326,6 +318,7 @@
             identifyImageName.Name = "identifyImageName";
             identifyImageName.Size = new Size(295, 40);
             identifyImageName.TabIndex = 31;
+            identifyImageName.Click += identifyImageName_Click;
             // 
             // label22
             // 
@@ -394,6 +387,7 @@
             reidentifyImageName.Name = "reidentifyImageName";
             reidentifyImageName.Size = new Size(295, 40);
             reidentifyImageName.TabIndex = 28;
+            reidentifyImageName.Click += reidentifyImageName_Click;
             // 
             // label21
             // 
@@ -534,6 +528,7 @@
             capturetestImageName.Name = "capturetestImageName";
             capturetestImageName.Size = new Size(295, 40);
             capturetestImageName.TabIndex = 25;
+            capturetestImageName.Click += capturetestImageName_Click;
             // 
             // label15
             // 
@@ -844,7 +839,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private ToolStripMenuItem toolStripMenuItem3;
         private DataGridViewTextBoxColumn IndexColumn;
         private DataGridViewTextBoxColumn IntervalColumn;
         private DataGridViewTextBoxColumn BlinkTypeColumn;
