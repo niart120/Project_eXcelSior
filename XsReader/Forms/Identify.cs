@@ -141,6 +141,9 @@ namespace Project_eXcelSior.Forms
                 this.seed0.Text = x0;
                 this.seed1.Text = x1;
 
+                //ついでに検索範囲も修正
+                this.searchMin.Value = 0;
+
                 setCaptureStatusLabels("Success!!", Color.OliveDrab);
                 var nextPlayerBlinkTick = current + (long)(BLINKCONST * 10_000_000);
                 SyncAdvance(baseseed, nextPlayerBlinkTick);
@@ -149,7 +152,9 @@ namespace Project_eXcelSior.Forms
 
         private void identifyImageName_Click(object sender, EventArgs e)
         {
-            loadImageNames();
+            var filenames = DirectoryUtils.GetFileNames(GetEyeimageDirPath(), new[] { ".png", ".jpeg", ".jpg", ".gif", ".bmp" });
+            identifyImageName.Items.Clear();
+            identifyImageName.Items.AddRange(filenames);
         }
     }
 }
