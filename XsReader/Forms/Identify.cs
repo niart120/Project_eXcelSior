@@ -134,7 +134,7 @@ namespace Project_eXcelSior.Forms
                 }
                 //GUIの更新
                 currentAdvance.Value = 0;
-                var fullhex = restored.ToU128String();
+                var fullhex = baseseed.ToU128String();
                 var x0 = fullhex[0..16];
                 var x1 = fullhex[16..32];
 
@@ -145,6 +145,11 @@ namespace Project_eXcelSior.Forms
                 var nextPlayerBlinkTick = current + (long)(BLINKCONST * 10_000_000);
                 SyncAdvance(baseseed, nextPlayerBlinkTick);
             }
+        }
+
+        private void identifyImageName_Click(object sender, EventArgs e)
+        {
+            loadImageNames();
         }
     }
 }
