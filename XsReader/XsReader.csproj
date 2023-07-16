@@ -6,9 +6,10 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Authors>""</Authors>
-    <Company>""</Company>
-    <Version>"1.1.0"</Version>
+	<Company>Project_eXcelSior</Company>
+    <Authors>niart120</Authors>
+    <FileVersion></FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
