@@ -18,7 +18,9 @@ XsReaderはポケットモンスター ブリリアントダイヤモンド・�
 プロジェクト名である _Project_eXcelSior_ には, 拙作の[Project_Xs](https://github.com/niart120/Project_Xs)よりも利便性の高い乱数調整環境を提供するという願いを込めています.
 
 ## 使い方
-TBA
+以下の記事に記載されています。
+
+[BDSP乱数ツール "XsReader" の紹介](https://hackmd.io/@niart/SkCpMpk9n)
 
 ## 使用ライブラリ
 - OpenCV
@@ -27,7 +29,10 @@ TBA
 - Math.NET
 - BlinkReaderLib
 
+## ソースコード
+https://github.com/niart120/Project_eXcelSior
+
 ## 謝辞
 ツール作成に当たって利用した各種ライブラリ製作者に御礼申し上げます.
 
-特に, PokemonPRNGLibraryをはじめとするRNG関連のライブラリを整備してくださっている夜綱氏には開発中においてもいくつかご助言をいただきました. この場をお借りして改めて感謝申し上げます. 
+特に, PokemonPRNGLibraryをはじめとするRNG関連のライブラリを整備してくださり, 開発中にもご助言をいただきました夜綱氏には, この場をお借りして改めて感謝申し上げます. 
