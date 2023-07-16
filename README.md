@@ -22,6 +22,10 @@ XsReaderはポケットモンスター ブリリアントダイヤモンド・�
 
 [BDSP乱数ツール "XsReader" の紹介](https://hackmd.io/@niart/SkCpMpk9n)
 
+## バージョン情報
+- v1.0.1 バグ修正
+- v1.0.0 初版
+
 ## 使用ライブラリ
 - OpenCV
 - PokemonPRNGLibrary
