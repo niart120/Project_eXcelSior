@@ -49,5 +49,10 @@ namespace Project_eXcelSior.Forms
                 }
             }
         }
+
+        private void capturetestImageName_Click(object sender, EventArgs e)
+        {
+            loadImageNames();
+        }
     }
 }

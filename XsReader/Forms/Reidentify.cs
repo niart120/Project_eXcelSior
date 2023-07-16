@@ -174,5 +174,10 @@ namespace Project_eXcelSior.Forms
                 SyncAdvance(restored, nextPlayerBlinkTick, nextPokeBlinkTick);
             }
         }
+
+        private void reidentifyImageName_Click(object sender, EventArgs e)
+        {
+            loadImageNames();
+        }
     }
 }
