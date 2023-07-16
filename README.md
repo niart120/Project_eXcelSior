@@ -29,6 +29,9 @@ XsReaderはポケットモンスター ブリリアントダイヤモンド・�
 - Math.NET
 - BlinkReaderLib
 
+## 製作者
+ニアト [@21i10r29](https://twitter.com/21i10r29)
+
 ## ソースコード
 https://github.com/niart120/Project_eXcelSior
 
