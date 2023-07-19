@@ -13,12 +13,32 @@ public class Setting
     public Decimal targetAdvance;
     [JsonInclude]
     public Decimal fps;
+    [JsonInclude]
+    public double BLINKCONST;
+
+    public Setting()
+    {
+        this.seed0 = "0";
+        this.seed1 = "0";
+        this.targetAdvance = 0;
+        this.fps = 60;
+        this.BLINKCONST = 61.0 / 60.0;
+    }
 
     public Setting(string seed0, string seed1, Decimal targetAdvance, Decimal fps) { 
         this.seed0 = seed0;
         this.seed1 = seed1;
         this.targetAdvance = targetAdvance;
         this.fps = fps;
+        this.BLINKCONST = 61.0 / 60.0;
+    }
+    public Setting(string seed0, string seed1, Decimal targetAdvance, Decimal fps, double BLINKCONST)
+    {
+        this.seed0 = seed0;
+        this.seed1 = seed1;
+        this.targetAdvance = targetAdvance;
+        this.fps = fps;
+        this.BLINKCONST = BLINKCONST;
     }
 
     public static string GetConfigFilePath()

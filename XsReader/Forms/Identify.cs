@@ -2,6 +2,7 @@
 using Project_eXcelSior.Misc;
 using PokemonBDSPRNGLibrary.RestoreSeed;
 using PokemonPRNG.XorShift128;
+using MathNet.Numerics.LinearRegression;
 
 namespace Project_eXcelSior.Forms
 {
@@ -41,28 +42,32 @@ namespace Project_eXcelSior.Forms
             using (detector = new BlinkDetector(imagePath, (double)detectorThreshold.Value))
             {
                 var en = BlinkCapturerer.CaptureBlinkAsync(cts.Token, detector, captureWindowForm, FPS).GetAsyncEnumerator();
-                
                 (uint, uint, uint, uint) restored = default;
 
                 int count = 0;
                 long prev = 0;
                 long current = 0;
-                long firstblink = 0;
                 var prevBlinkType = PlayerBlink.Single;
 
                 //特定結果検証用に間隔を記録しておく
                 var intervals = new List<int>();
+                //瞬きタイミングを線形回帰でフィッティングするための準備
+                var X = new List<long>();
+                var Y = new List<long>();
+
                 //最初に観測した段階では, 次の瞬きが来るまでSingleかDoubleかを判別することは出来ない.
                 //観測した瞬きを用いて即座に判定を行うのではなく, 前回までの観測結果を元にSeed特定を行う.
                 while (await en.MoveNextAsync())
                 {
                     current = en.Current;
-                    //初回のみprevとfirstblinkを更新してループに戻る
+                    //初回のみprevを更新してループに戻る
                     if (prev == 0)
                     {
                         dataGridView1.Rows.Add(count++, "-", "*");
                         prev = current;
-                        firstblink = current;
+                        //回帰用のリストにも詰める
+                        X.Add(0);
+                        Y.Add(current);
                         continue;
                     }
                     var intvl = (current - prev) / 10_000_000.0 / BLINKCONST;
@@ -81,6 +86,9 @@ namespace Project_eXcelSior.Forms
                     var interval = (int)(intvl + 0.5);
                     //検証リストへの追加
                     intervals.Add(interval);
+                    //回帰用のリストにも詰めておく
+                    X.Add(X.Last() + interval);
+                    Y.Add(current);
                     //復元を試みる
                     if (inverter.TryRestoreState(out restored)) break;
 
@@ -132,6 +140,9 @@ namespace Project_eXcelSior.Forms
                     captureInProgress = false;
                     return;
                 }
+                //得られた結果から瞬き判定の間隔を推定しておく
+                (var intercept, var slope) = SimpleRegression.Fit(X.Select(_ => (double)_).ToArray(), Y.Select(_ => (double)_).ToArray());
+                BLINKCONST = slope / 10_000_000.0;
                 //GUIの更新
                 currentAdvance.Value = 0;
                 var fullhex = baseseed.ToU128String();

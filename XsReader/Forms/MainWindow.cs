@@ -9,7 +9,7 @@ namespace Project_eXcelSior.Forms
     public partial class MainWindow : Form
     {
         private double FPS = 60.0;
-        private const double BLINKCONST = 61.0 / 60.0;
+        private double BLINKCONST = 61.0 / 60.0;
         private const string IMGDIRNAME = "/eyeimage";
 
         CaptureWindowForm captureWindowForm = new CaptureWindowForm();
@@ -108,7 +108,7 @@ namespace Project_eXcelSior.Forms
         }
         private Setting GetSetting()
         {
-            var cfg = new Setting(this.seed0.Text, this.seed1.Text, this.targetAdvance.Value, this.numericUpDown1.Value);
+            var cfg = new Setting(this.seed0.Text, this.seed1.Text, this.targetAdvance.Value, this.numericUpDown1.Value, this.BLINKCONST);
             return cfg;
         }
 
@@ -129,7 +129,7 @@ namespace Project_eXcelSior.Forms
             this.seed1.Text = cfg.seed1;
             this.targetAdvance.Value = cfg.targetAdvance;
             this.numericUpDown1.Value = cfg.fps;
-
+            this.BLINKCONST = cfg.BLINKCONST;
         }
 
         private void MainWindow_FormClosing(object? sender, FormClosingEventArgs e)
