@@ -1,11 +1,5 @@
 ﻿using PokemonBDSPRNGLibrary.RestoreSeed;
-using PokemonPRNG.XorShift128;
 using Project_eXcelSior.Misc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_eXcelSior.Forms
 {
